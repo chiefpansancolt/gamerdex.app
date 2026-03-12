@@ -299,7 +299,7 @@ export default function GameCard({
           </span>
         </div>
       )}
-      </div>
+    </div>
   );
 
   if (href) {
@@ -316,7 +316,9 @@ export default function GameCard({
   }
 
   return (
-    <div className={`game-card ${comingSoon ? "cursor-default" : "cursor-pointer"}`}>
+    <div
+      className={`game-card ${comingSoon ? "cursor-default" : "cursor-pointer"}`}
+    >
       {cardContent}
     </div>
   );
