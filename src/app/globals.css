@@ -1,5 +1,77 @@
 @import "tailwindcss";
-@plugin "flowbite-react/plugin/tailwindcss";
-@source "../.flowbite-react/class-list.json";
+@import "flowbite-react/plugin/tailwindcss";
+@source "../../.flowbite-react/class-list.json";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-chakra-petch), "Chakra Petch", sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+
+  --color-brand: #00d4ff;
+  --color-brand-dim: #00d4ff99;
+  --color-surface-dark: #07090f;
+  --color-surface-card: #0d1018;
+  --color-surface-elevated: #111828;
+  --color-border-dark: #1a1e2a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.dark ::-webkit-scrollbar {
+  width: var(--lwc-spacingXSmall, 8px);
+}
+.dark ::-webkit-scrollbar-track {
+  background: var(--color-surface-dark);
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-border-dark);
+  border-radius: var(--lwc-borderRadiusMedium, 4px);
+}
+
+.game-card {
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.game-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  filter: drop-shadow(0 16px 40px rgba(0, 212, 255, 0.15));
+}
+
+.carousel-card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--lwc-varSpacingMedium, var(--lwc-spacingMedium, 1rem));
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
