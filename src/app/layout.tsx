@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import { ThemeModeScript } from "flowbite-react";
 import type { Metadata } from "next";
 import { Chakra_Petch, Geist_Mono } from "next/font/google";
@@ -45,6 +46,7 @@ export default function RootLayout({
       >
         <ThemeInit />
         {children}
+        <Analytics />
       </body>
     </html>
   );
