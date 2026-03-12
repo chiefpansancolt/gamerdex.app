@@ -8,6 +8,8 @@ interface GameCardProps {
   iconImage: string;
   titleSize?: number;
   titleY?: number;
+  href?: string;
+  comingSoon?: boolean;
 }
 
 const PIXEL_CHARACTER = (
@@ -49,14 +51,16 @@ export default function GameCard({
   iconImage,
   titleSize = 22,
   titleY = 240,
+  href,
+  comingSoon = false,
 }: GameCardProps) {
   const subtitleY =
     title.length > 1 ? titleY + 20 * (title.length - 1) + 23 : titleY + 23;
   const dividerY = subtitleY + 22;
   const watermarkY = dividerY + 10;
 
-  return (
-    <div className="game-card cursor-pointer">
+  const cardContent = (
+    <div className="relative">
       <svg
         viewBox="0 0 300 365"
         xmlns="http://www.w3.org/2000/svg"
@@ -288,6 +292,32 @@ export default function GameCard({
           strokeWidth="1"
         />
       </svg>
+      {comingSoon && (
+        <div className="absolute inset-0 flex items-center justify-center rounded-2xl bg-black/60 backdrop-blur-[2px]">
+          <span className="text-brand -rotate-12 text-2xl font-bold tracking-widest uppercase">
+            Coming Soon
+          </span>
+        </div>
+      )}
+      </div>
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="game-card block cursor-pointer"
+      >
+        {cardContent}
+      </a>
+    );
+  }
+
+  return (
+    <div className={`game-card ${comingSoon ? "cursor-default" : "cursor-pointer"}`}>
+      {cardContent}
     </div>
   );
 }
@@ -303,6 +333,7 @@ export const GAME_CARDS: GameCardProps[] = [
     iconImage: "/games/dinkum-icon.png",
     titleSize: 22,
     titleY: 240,
+    href: "https://dinkum-tracker.app",
   },
   {
     id: "s",
@@ -314,6 +345,7 @@ export const GAME_CARDS: GameCardProps[] = [
     iconImage: "/games/stardew-valley-icon.png",
     titleSize: 18,
     titleY: 235,
+    comingSoon: true,
   },
   {
     id: "m",
@@ -325,5 +357,6 @@ export const GAME_CARDS: GameCardProps[] = [
     iconImage: "/games/supermarket-simulator-icon.jpg",
     titleSize: 15,
     titleY: 232,
+    href: "https://supermarket-simulator.gamerdex.app",
   },
 ];
