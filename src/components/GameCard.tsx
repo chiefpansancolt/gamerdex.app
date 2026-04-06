@@ -347,7 +347,7 @@ export const GAME_CARDS: GameCardProps[] = [
     iconImage: "/games/stardew-valley-icon.png",
     titleSize: 18,
     titleY: 235,
-    comingSoon: true,
+    href: "https://stardew-valley.gamerdex.app",
   },
   {
     id: "m",
