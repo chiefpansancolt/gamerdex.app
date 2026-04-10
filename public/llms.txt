@@ -1,0 +1,16 @@
+# GamerDex
+
+> GamerDex is a collection of game tracker companions that help you catalog, track, and complete your favorite games.
+
+GamerDex provides dedicated tracking tools for individual games. Each tracker is a standalone companion app tailored to a specific game's content — collectibles, progress milestones, and completion checklists.
+
+## Supported Games
+
+- Dinkum — track your progress in the Australian-themed life sim
+- Stardew Valley — catalog your farm, bundles, and collectibles
+- Supermarket Simulator — track your store management progress
+
+## Site
+
+- Homepage: https://gamerdex.app
+- Sitemap: https://gamerdex.app/sitemap.xml
