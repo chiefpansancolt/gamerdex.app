@@ -59,13 +59,13 @@ export default function AboutSection() {
           GamerDex is a collection of game-specific tracker companions designed
           for players who want to see and do everything. Whether you&apos;re
           cataloging every fish in Dinkum, completing the community center in
-          Stardew Valley, or stocking every shelf in Supermarket Simulator —
+          Stardew Valley, or stocking every shelf in Supermarket Simulator,
           we&apos;ve got a tracker built just for that.
         </p>
         <p className="mb-10 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
           Each tracker is hand-crafted with accurate, up-to-date game data and
           designed to be used alongside your gameplay. No ads, no accounts
-          required — just open and start tracking.
+          required, just open and start tracking.
         </p>
 
         <div className="flex flex-wrap justify-center gap-8 text-center">
