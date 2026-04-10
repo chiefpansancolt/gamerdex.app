@@ -335,7 +335,7 @@ export const GAME_CARDS: GameCardProps[] = [
     iconImage: "/games/dinkum-icon.png",
     titleSize: 22,
     titleY: 240,
-    href: "https://dinkum-tracker.app",
+    href: "https://dinkum.gamerdex.app",
   },
   {
     id: "s",
