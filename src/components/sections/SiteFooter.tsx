@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaRegCopyright } from "react-icons/fa6";
+import { FaDiscord, FaRegCopyright } from "react-icons/fa6";
 
 export default function SiteFooter() {
   return (
@@ -15,12 +15,21 @@ export default function SiteFooter() {
               className="h-11 w-auto"
             />
           </a>
-          <div className="flex gap-6 text-sm text-gray-500 dark:text-gray-400">
+          <div className="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
             <a href="#features" className="hover:text-brand">
               Features
             </a>
             <a href="#about" className="hover:text-brand">
               About
+            </a>
+            <a
+              href="https://discord.gg/NBTjUCvqev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-brand"
+              aria-label="Join our Discord"
+            >
+              <FaDiscord className="h-5 w-5" />
             </a>
           </div>
         </div>
