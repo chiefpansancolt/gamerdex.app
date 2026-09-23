@@ -15,11 +15,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = "https://gamerdex.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "GamerDex — Track Your Game Progress",
+  title: {
+    default: "GamerDex — Track Your Game Progress",
+    template: "%s | GamerDex",
+  },
   description:
     "GamerDex is a collection of game tracker companions that help you catalog, track, and complete your favorite games.",
   keywords: [
@@ -29,29 +32,27 @@ export const metadata: Metadata = {
     "game catalog",
     "GamerDex",
   ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "GamerDex — Track Your Game Progress",
     description:
       "GamerDex is a collection of game tracker companions that help you catalog, track, and complete your favorite games.",
     url: siteUrl,
     siteName: "GamerDex",
-    images: [
-      {
-        url: "/gamerdex-logo.png",
-        width: 512,
-        height: 512,
-        alt: "GamerDex Logo",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "GamerDex — Track Your Game Progress",
     description:
       "GamerDex is a collection of game tracker companions that help you catalog, track, and complete your favorite games.",
-    images: ["/gamerdex-logo.png"],
   },
   icons: {
     icon: [
